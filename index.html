@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bite & Dash</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple: #5A2D82;
+      --pink: #E94F8A;
+      --blue: #2978B5;
+      --brown: #8B4B2F;
+      --green: #6B8E23;
+      --light-bg: #FFF8F2;
+      --text-dark: #2F2F2F;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--purple);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .primary-tagline {
+      font-size: 1.4rem;
+      margin: 0.3rem 0 1rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      color: var(--pink);
+    }
+
+    .secondary-tagline {
+      font-size: 1rem;
+      margin-top: 0.8rem;
+      font-style: italic;
+      color: var(--blue);
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .hero-btn {
+      margin-top: 1rem;
+      background-color: var(--pink);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero-btn:hover {
+      background-color: var(--blue);
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: var(--purple);
+      margin-bottom: 1rem;
+    }
+
+    .menu-grid {
+      max-width: 1000px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .menu-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .menu-item h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--brown);
+    }
+
+    .menu-item .price {
+      float: right;
+      font-weight: bold;
+    }
+
+    .about-text {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      text-align: left;
+    }
+
+    form label {
+      font-weight: 600;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin-top: 0.3rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    form button {
+      background: var(--green);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: var(--blue);
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      z-index: 999;
+    }
+
+    footer {
+      background-color: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: var(--pink);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .primary-tagline {
+        font-size: 1.1rem;
+      }
+
+      .hero-btn {
+        width: 80%;
+        font-size: 1.1rem;
+      }
+
+      form {
+        padding: 1.2rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bite & Dash</h1>
+    <p class="primary-tagline">Small Bakes. Big Flavour.</p>
+    <button class="hero-btn">Order Now</button>
+    <p class="secondary-tagline">Grab. Dash. Devour.</p>
+  </header>
+
+  <section class="section">
+    <h2>About Us</h2>
+    <div class="about-text">
+      <p><strong>Bite & Dash</strong> is a bakery brand born out of a love for the little things that bring big joy. We specialize in small, dainty treats that are easy to grab, gift, and enjoy on the go. From moist mini cakes to decadent slice surprises, every item is crafted to pack a punch of flavor in just the right portion. Whether you're celebrating a moment or treating yourself on a whim, Bite & Dash delivers small bakes with big personality.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Mini Cakes <span class="price">$10.00</span></h3>
+        <p>4" two-layered cake. Available in: Chocolate, Vanilla, Red Velvet, Carrot.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Bento Cake with Cupcakes <span class="price">$15.00</span></h3>
+        <p>4" cake + 5 cupcakes. Available in: Red Velvet, Mint Chocolate, Strawberry.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Cupcakes <span class="price">$12.00</span></h3>
+        <p>Box of 12. Available in: Chocolate, Vanilla, Coconut, Strawberry, S'mores.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Regular Cake Slice <span class="price">$2.50</span></h3>
+        <p>Moist slice with fresh cream. Available in: Chocolate, Banana, Red Velvet.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Slice Surprise <span class="price">$5.00</span></h3>
+        <p>Decorated, gift-ready slice. Flavours: Red Velvet, Strawberry, Coconut, S'mores.</p>
+      </div>
+      <div class="menu-item">
+        <h3>8" Cakes <span class="price">$25.00</span></h3>
+        <p>8" two-layered cake. Flavours: Chocolate, Carrot, Vanilla, Mint Chocolate.</p>
+      </div>
+      <div class="menu-item">
+        <h3>Cheesecake <span class="price">$35.00</span></h3>
+        <p>8" creamy cheesecake with blueberry or strawberry topping.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Place an Order</h2>
+    <form action="https://formspree.io/f/mrbkdbad" method="POST">
+      <input type="hidden" name="_replyto" />
+      <label for="name">Full Name</label>
+      <input type="text" name="name" required>
+
+      <label for="contact">Email or WhatsApp</label>
+      <input type="text" name="contact" required>
+
+      <label for="product">Product</label>
+      <select name="product" required>
+        <option value="">-- Select Product --</option>
+        <option>Mini Cake</option>
+        <option>Bento Cake with Cupcakes</option>
+        <option>Cupcakes</option>
+        <option>Regular Cake Slice</option>
+        <option>Slice Surprise</option>
+        <option>8" Cake</option>
+        <option>Cheesecake</option>
+      </select>
+
+      <label for="flavour">Preferred Flavour</label>
+      <input type="text" name="flavour" placeholder="e.g., Chocolate, Strawberry">
+
+      <label for="notes">Additional Notes</label>
+      <textarea name="notes" rows="4" placeholder="Delivery date, message, etc."></textarea>
+
+      <button type="submit">Submit Order</button>
+    </form>
+  </section>
+
+  <div id="popup">
+    <p>🎉 Thank you for your order! We'll be in touch soon.</p>
+  </div>
+
+  <footer>
+    <p>Contact us: <a href="mailto:biteanddash.bakery@outlookcom">biteanddash.bakery@outlookcom</a></p>
+    <p>WhatsApp: 078 820 2955</p>
+    <p>Follow us @biteanddash</p>
+  </footer>
+
+  <script>
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      if (!formData.get("name") || !formData.get("contact")) {
+        alert("Please fill in your name and contact.");
+        return;
+      }
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById("popup").style.display = "block";
+          form.reset();
+          setTimeout(() => {
+            document.getElementById("popup").style.display = "none";
+          }, 4000);
+        } else {
+          alert("Oops! Something went wrong. Try again later.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
